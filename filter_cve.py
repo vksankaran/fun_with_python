@@ -1,7 +1,17 @@
 import pandas as pd
+import os
+import argparse
 
 # Load the Excel file
-input_file = "CVE_Report_October2024.xlsx"  # Replace with your actual file name
+#input_file = "CVE_Report_October2024.xlsx"  # Replace with your actual file name
+# Set up argument parser
+parser = argparse.ArgumentParser(description="Process a CSV file.")
+parser.add_argument("input_file", help="Path to the input CSV file")
+args = parser.parse_args()
+
+# Get the input file name and create the output file name
+input_file = args.input_file
+
 sheet_name = "Detailed-Report"  # Sheet to process
 
 # Read the specific sheet from the Excel file
